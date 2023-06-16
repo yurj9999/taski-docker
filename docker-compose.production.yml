@@ -8,16 +8,10 @@ volumes:
 # Всё отличие — заменяем build на image и указываем, какой образ использовать
 services:
   db:
-    image: postgres:13
+    image: postgres:13.10
     env_file: .env
     volumes:
       - pg_data_production:/var/lib/postgresql/data
-    
-    
-    ports:
-      - 8000:5432
-
-
 
   backend:
     depends_on:
