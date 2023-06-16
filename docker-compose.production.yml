@@ -15,7 +15,8 @@ services:
 
   backend:
     depends_on:
-      - db
+      db:
+        condition: service_completed_successfully
     image: yurj9999/taski_backend
     env_file: .env
     volumes:
