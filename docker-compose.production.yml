@@ -14,9 +14,6 @@ services:
       - pg_data_production:/var/lib/postgresql/data
 
   backend:
-    depends_on:
-      db:
-        condition: service_started
     image: yurj9999/taski_backend
     env_file: .env
     volumes:
